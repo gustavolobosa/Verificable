@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Proyecto_Verificable.Models.FormAcquirer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AcquirerRunRut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AcquirerEntitlement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AcquirerPercentNotCredited)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Form)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcquirerRunRut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcquirerEntitlement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcquirerPercentNotCredited)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Form.FormId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.FormAcquirerId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.FormAcquirerId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.FormAcquirerId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,49 @@
+﻿@model Proyecto_Verificable.Models.FormDispossessor
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>FormDispossessor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="FormDispossessorId" />
+            <div class="form-group">
+                <label asp-for="FormId" class="control-label"></label>
+                <select asp-for="FormId" class="form-control" asp-items="ViewBag.FormId"></select>
+                <span asp-validation-for="FormId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DispossessorRunRut" class="control-label"></label>
+                <input asp-for="DispossessorRunRut" class="form-control" />
+                <span asp-validation-for="DispossessorRunRut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DispossessorEntitlement" class="control-label"></label>
+                <input asp-for="DispossessorEntitlement" class="form-control" />
+                <span asp-validation-for="DispossessorEntitlement" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DispossessorPercentNotCredited" class="control-label"></label>
+                <input asp-for="DispossessorPercentNotCredited" class="form-control" />
+                <span asp-validation-for="DispossessorPercentNotCredited" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

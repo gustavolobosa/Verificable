@@ -1,0 +1,42 @@
+﻿@model Proyecto_Verificable.Models.FormDispossessor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>FormDispossessor</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DispossessorRunRut)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DispossessorRunRut)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DispossessorEntitlement)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DispossessorEntitlement)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DispossessorPercentNotCredited)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DispossessorPercentNotCredited)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Form)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Form.FormId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.FormDispossessorId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
